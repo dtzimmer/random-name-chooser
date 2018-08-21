@@ -8,6 +8,16 @@ import NamesChosen from './NamesChosen'
 import NamesAvailable from './NamesAvailable'
 
 class App extends Component {
+  handleSubmit = (event, firstName) => {
+
+    event.preventDefault();
+    console.log('HandleSubmit Called')
+    this.setState({
+      propfname: firstName,
+    })
+  }
+
+
   render() {
     return (
       <div>
@@ -18,7 +28,7 @@ class App extends Component {
         </div>
         <div className="componentsrow">
           <div className="componentdisplay">
-            <NameSubmit />
+            <NameSubmit handleSubmit={this.handleSubmit} />
           </div>
           <div className="componentdisplay">
             <NamesAvailable />
