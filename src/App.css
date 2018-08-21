@@ -1,0 +1,72 @@
+body {
+  background: black;
+  margin: 10px;
+  padding: 10px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+button {
+  border-radius: 3px;
+}
+
+.logo {
+  display: block;
+  margin: 10px auto;
+  width: 25%;
+  height: 25%;
+}
+
+h1 {
+  color: white;
+  font-family: 'Black Ops One', cursive;
+  text-align: center;
+  font-size: 5vw;
+}
+
+h2 {
+  color: white;
+  font-family: 'Black Ops One', cursive;
+  text-align: center;
+  font-size: 3vw;
+}
+
+h4 {
+  text-align: center;
+  font-size: 4vw;
+}
+
+label {
+  font-size: 2vw;
+  text-align: center;
+}
+
+.namedisplay {
+  background: #666666;
+  display: block;
+  margin: 10px auto;
+  padding: 20px;
+  width: 25%;
+  height: 25%;
+  border-radius: 20px;
+}
+
+.componentsrow {
+  background: #666666;
+  margin: 10px;
+  padding: 10px;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.componentdisplay {
+  border: 1px solid black;
+  padding: 10px;
+  display: block;
+  margin: 10px auto;
+  width: 25%;
+  height: 25%;
+}
