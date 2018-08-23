@@ -11,24 +11,24 @@ import NamesAvailable from './NamesAvailable'
 class App extends Component {
   constructor(props) {
     super(props)
-    this.state = { names: [], name: '', chosen: [] }
+    this.state = { names: [], name: '', chosen: [], picked: '' }
   }
 
   handleSubmit = (event, firstName) => {
-    event.preventDefault();
+    event.preventDefault()
     let namearray = this.state.names
     namearray.push(firstName)
-    this.setState ({ names: namearray})
-    // this.setState({ names: '' });
+    this.setState({ names: namearray })
   }
 
   displayWinner = () => {
     if (this.state.names.length > 0) {
       console.log('DISPLAY WINNER')
       const chosen = this.state.names[Math.floor(Math.random() * this.state.names.length)]
+      this.setState({ picked: chosen })
       this.setState(oldState => {
         return {
-          chosen: [ ...oldState.chosen],
+          chosen: [chosen, ...oldState.chosen],
           names: oldState.names.filter((name) => {
             return name !== chosen
           })
@@ -37,6 +37,12 @@ class App extends Component {
     }
   }
 
+  // resetName = (event) => {
+  //   event.preventDefault()
+  //   let names = this.state.names
+  //   this.setState({ chosen : names })
+  // }
+
   render() {
     return (
       <div>
@@ -44,7 +50,7 @@ class App extends Component {
         <img className="logo" src={Logo} alt="the claw logo" />
 
         <div className="">
-          <DisplayWinner />
+          <DisplayWinner displayWinner={this.displayWinner} picked={this.state.picked} />
         </div>
 
         <div className="componentsrow">
@@ -55,7 +61,7 @@ class App extends Component {
             <NamesAvailable names={this.state.names} />
           </div>
           <div className="componentdisplay">
-            <NamesChosen />
+            <NamesChosen chosen={this.state.chosen} />
           </div>
         </div>
 

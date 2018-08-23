@@ -10,12 +10,17 @@ class NameSubmit extends Component {
     }
   }
 
+  submitAndClear = (e) => {
+    this.props.handleSubmit(e, this.state.firstName);
+    this.setState({firstName: ''});
+    console.log(this.state.firstName);
+  }
 
   render() {
     return (
       <div>
         <h2>Submit Name</h2>
-        <form onSubmit={e => this.props.handleSubmit(e, this.state.firstName)}>
+        <form onSubmit={e => this.submitAndClear(e)}>
           <label htmlFor="firstname">First Name</label>
           <input type="text" id="firstname" name="firstname"
                  placeholder="First name" onChange={e => this.setState({ firstName: e.target.value})}/>
