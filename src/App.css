@@ -39,7 +39,7 @@ h4 {
   font-size: 4vw;
 }
 
-p {
+p, li {
   font-size: 2vw;
   text-align: center;
 }
@@ -47,6 +47,12 @@ p {
 label {
   font-size: 2vw;
   text-align: center;
+}
+
+.row {
+  display: flex;
+  margin-right: 10%;
+  margin-left: 10%;
 }
 
 .namedisplay {

@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import './App.css'
 import Logo from './The CLAW (1).jpg'
 
+
 import NameSubmit from './NameSubmit'
 import DisplayWinner from './DisplayWinner'
 import NamesChosen from './NamesChosen'
@@ -39,11 +40,13 @@ class App extends Component {
   render() {
     return (
       <div>
-        <h1>TheClaw.netlify.com</h1>
+
         <img className="logo" src={Logo} alt="the claw logo" />
-        <div className="NameDisplay">
+
+        <div className="">
           <DisplayWinner />
         </div>
+
         <div className="componentsrow">
           <div className="componentdisplay">
             <NameSubmit handleSubmit={this.handleSubmit} />
@@ -55,6 +58,7 @@ class App extends Component {
             <NamesChosen />
           </div>
         </div>
+
       </div>
     )
   }
