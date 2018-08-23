@@ -5,7 +5,6 @@ import './App.css';
 class NameSubmit extends Component {
   constructor(props) { //The constructor method is a special method for creating and initializing an object created within a class.
     super(props)
-
     this.state = {
       firstName: ''
     }

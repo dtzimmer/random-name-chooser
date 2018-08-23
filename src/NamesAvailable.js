@@ -1,17 +1,19 @@
-import React, { Component } from 'react';
-import './App.css';
+import React, { Component } from 'react'
+import './App.css'
 
 class NamesAvailable extends Component {
   render() {
     return (
       <div>
         <h2>Available Names</h2>
-        <div className="contactdisplay"> {/*Props are passed and rendered here in this child component*/}
-          <p>{this.props.fname}</p>
+        <div>
+          {this.props.names.map((name) => {
+            return <li>{name}</li>
+          })}
         </div>
       </div>
-    );
+    )
   }
 }
 
-export default NamesAvailable;
+export default NamesAvailable

@@ -39,6 +39,11 @@ h4 {
   font-size: 4vw;
 }
 
+p {
+  font-size: 2vw;
+  text-align: center;
+}
+
 label {
   font-size: 2vw;
   text-align: center;
@@ -52,6 +57,7 @@ label {
   width: 25%;
   height: 25%;
   border-radius: 20px;
+  box-shadow: 2px 2px 2px lightgrey;
 }
 
 .componentsrow {
@@ -60,6 +66,7 @@ label {
   padding: 10px;
   display: flex;
   justify-content: space-evenly;
+  box-shadow: 2px 2px 2px lightgrey;
 }
 
 .componentdisplay {
