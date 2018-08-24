@@ -21,9 +21,8 @@ class NameSubmit extends Component {
       <div>
         <h2>Submit Name</h2>
         <form onSubmit={e => this.submitAndClear(e)}>
-          <label htmlFor="firstname">First Name</label>
           <input type="text" id="firstname" name="firstname"
-                 placeholder="First name" onChange={e => this.setState({ firstName: e.target.value})}/>
+                 placeholder="First name" value={this.state.firstName} onChange={e => this.setState({ firstName: e.target.value})}/>
           <button type="submit">Submit</button>
         </form>
       </div>

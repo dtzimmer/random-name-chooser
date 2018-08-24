@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import './App.css'
-import Logo from './The CLAW (1).jpg'
+import ClawIcon from './ClawIcon.jpg'
 
 
 import NameSubmit from './NameSubmit'
@@ -40,16 +40,19 @@ class App extends Component {
   // resetName = (event) => {
   //   event.preventDefault()
   //   let names = this.state.names
-  //   this.setState({ chosen : names })
+  //   let chosen = this.state.chosen //gets the chosen array
+  //   this.setState({ chosen.push(names)});
   // }
 
   render() {
     return (
       <div>
+        <div className="banner">
+          <img className="icon" src={ClawIcon} alt="claw icon" />
+          <h1>The Claw</h1>
+        </div>
 
-        <img className="logo" src={Logo} alt="the claw logo" />
-
-        <div className="">
+        <div className="displaywinner">
           <DisplayWinner displayWinner={this.displayWinner} picked={this.state.picked} />
         </div>
 
