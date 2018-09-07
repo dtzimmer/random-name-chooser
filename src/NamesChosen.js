@@ -7,16 +7,13 @@ class NamesChosen extends Component {
       <div>
         <h2>Chosen Names</h2>
         <div>
-          {this.props.chosen.map((name) => {
-            return <li>{name}</li>
+          {this.props.chosen.map((name, i) => {
+            return <li key={i}>{name}</li>
           })}
         </div>
-        {/*<button type="button" onClick={(event) => this.props.resetName(event)}>*/}
-          {/*Reset Names*/}
-        {/*</button>*/}
-        <form>
-        <button type="submit">Reset</button>
-        </form>
+        <button type="button" onClick={(event) => this.props.resetName(event)}>
+          Reset Names
+        </button>
       </div>
     );
   }

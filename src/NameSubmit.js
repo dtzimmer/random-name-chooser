@@ -13,7 +13,6 @@ class NameSubmit extends Component {
   submitAndClear = (e) => {
     this.props.handleSubmit(e, this.state.firstName);
     this.setState({firstName: ''});
-    console.log(this.state.firstName);
   }
 
   render() {

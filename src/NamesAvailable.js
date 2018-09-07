@@ -7,8 +7,8 @@ class NamesAvailable extends Component {
       <div>
         <h2>Available Names</h2>
         <div>
-          {this.props.names.map((name) => {
-            return <li>{name}</li>
+          {this.props.names.map((name, i) => {
+            return <li key={i} >{name}</li>
           })}
         </div>
       </div>

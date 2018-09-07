@@ -1,8 +1,6 @@
 import React, { Component } from 'react'
 import './App.css'
 import ClawIcon from './ClawIcon.jpg'
-
-
 import NameSubmit from './NameSubmit'
 import DisplayWinner from './DisplayWinner'
 import NamesChosen from './NamesChosen'
@@ -23,7 +21,6 @@ class App extends Component {
 
   displayWinner = () => {
     if (this.state.names.length > 0) {
-      console.log('DISPLAY WINNER')
       const chosen = this.state.names[Math.floor(Math.random() * this.state.names.length)]
       this.setState({ picked: chosen })
       this.setState(oldState => {
@@ -37,12 +34,19 @@ class App extends Component {
     }
   }
 
-  // resetName = (event) => {
-  //   event.preventDefault()
-  //   let names = this.state.names
-  //   let chosen = this.state.chosen //gets the chosen array
-  //   this.setState({ chosen.push(names)});
-  // }
+  handleReset = (event) => {
+    event.preventDefault()
+    let names = this.state.names
+    let chosen = this.state.chosen
+    this.setState(oldState => {
+      return {
+        names: [...names, ...oldState.chosen],
+        chosen: oldState.chosen.filter((name) => {
+          return name === chosen
+        })
+      }
+    })
+  }
 
   render() {
     return (
@@ -64,7 +68,7 @@ class App extends Component {
             <NamesAvailable names={this.state.names} />
           </div>
           <div className="componentdisplay">
-            <NamesChosen chosen={this.state.chosen} />
+            <NamesChosen chosen={this.state.chosen} resetName={this.handleReset} />
           </div>
         </div>
 
