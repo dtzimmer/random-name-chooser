@@ -37,13 +37,10 @@ class App extends Component {
   handleReset = (event) => {
     event.preventDefault()
     let names = this.state.names
-    let chosen = this.state.chosen
     this.setState(oldState => {
       return {
         names: [...names, ...oldState.chosen],
-        chosen: oldState.chosen.filter((name) => {
-          return name === chosen
-        })
+        chosen: []
       }
     })
   }
